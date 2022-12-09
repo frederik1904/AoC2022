@@ -2,8 +2,8 @@
 
 public class Day4 : SolutioAbstract
 {
-    protected override string Path { get; set; } = "Day4Input1.txt";
-    public override string Name { get; set; } = "Day 4";
+    protected override string Path { get; } = "Day4Input1.txt";
+    public override string Name { get; } = "Day 4";
     public override string SolveOne()
     {
         return FindOverlaps(

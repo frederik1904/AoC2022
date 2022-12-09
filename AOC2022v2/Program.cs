@@ -13,7 +13,8 @@ var solutions = new List<SolutioAbstract>
     new Day4(),
     new Day5(),
     new Day6(),
-    new Day7()
+    new Day7(),
+    new Day8()
 };
 
 var sw = new Stopwatch();

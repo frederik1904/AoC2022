@@ -2,8 +2,8 @@ namespace AOC2022v2;
 
 public class Day7 : SolutioAbstract
 {
-    protected override string Path { get; set; } = "Day7Input1.txt";
-    public override string Name { get; set; } = "Day 7";
+    protected override string Path { get; } = "Day7Input1.txt";
+    public override string Name { get; } = "Day 7";
     public override string SolveOne()
     {
         var driveMap = SetupDrive();
@@ -22,10 +22,10 @@ public class Day7 : SolutioAbstract
     public override string SolveTwo()
     {
 
-        var totalSpace = 70_000_000;
-        var minNeeded = 30_000_000;
+        const int totalSpace = 70_000_000;
+        const int minNeeded = 30_000_000;
         var driveMap = SetupDrive();
-        List<int> dirSizes = new List<int>();
+        var dirSizes = new List<int>();
         foreach (var (_, tuple) in driveMap)
         {
             dirSizes.Add(tuple.Value.Item3);
@@ -34,16 +34,8 @@ public class Day7 : SolutioAbstract
         dirSizes.Sort();
 
         var sum = dirSizes.Sum();
-        var spaceNeeded =  Math.Abs(totalSpace - dirSizes[dirSizes.Count - 1] - minNeeded);
-        foreach (var dirSize in dirSizes)
-        {
-            if (dirSize >= spaceNeeded)
-            {
-                return dirSize.ToString();
-            }
-        }
-
-        throw new NotImplementedException();
+        var spaceNeeded =  Math.Abs(totalSpace - dirSizes[^1] - minNeeded);
+        return dirSizes.First(dirSize => dirSize >= spaceNeeded).ToString();
     }
     
     

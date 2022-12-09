@@ -2,8 +2,8 @@
 
 public class Day3 : SolutioAbstract
 {
-    protected override string Path { get; set; } = "Day3Input1.txt";
-    public override string Name { get; set; } = "Day 3";
+    protected override string Path { get; } = "Day3Input1.txt";
+    public override string Name { get; } = "Day 3";
 
     public override string SolveOne()
     {

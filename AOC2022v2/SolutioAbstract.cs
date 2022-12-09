@@ -2,8 +2,8 @@
 
 public abstract class SolutioAbstract
 {
-    protected abstract string Path { get; set; }
-    public abstract string Name { get; set; }
+    protected abstract string Path { get; }
+    public abstract string Name { get; }
     
     public abstract string SolveOne();
     public abstract string SolveTwo();

@@ -4,8 +4,8 @@ namespace AOC2022v2;
 
 public class Day2 : SolutioAbstract
 {
-    protected override string Path { get; set; } = "Day2Input1.txt";
-    public override string Name { get; set; } = "Day 2";
+    protected override string Path { get; } = "Day2Input1.txt";
+    public override string Name { get; } = "Day 2";
     public override string SolveOne()
     {
         var input = ReadInput();
