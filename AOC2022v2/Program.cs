@@ -12,12 +12,13 @@ var solutions = new List<SolutioAbstract>
     new Day3(),
     new Day4(),
     new Day5(),
-    new Day6()
+    new Day6(),
+    new Day7()
 };
 
 var sw = new Stopwatch();
 Console.WriteLine(" _____________________________________________________");
-Console.WriteLine("|{0,6}|{1,10}|{2,15}|{3,15}{4,4}|", "Day", "Part", "Answer", "Time", "(ms)");
+Console.WriteLine("|{0,6}|{1,10}|{2,15}|{3,15}{4,4}|", "Day", "Part", "Answer", "Time", "(ns)");
 
 foreach (var question in solutions)
 {
@@ -33,8 +34,8 @@ void LogInformation(Stopwatch stopwatch, SolutioAbstract question, string part, 
         stopwatch.Start();
         var resultTwo = solutionFunction();
         stopwatch.Stop();
-        var timeTwo = stopwatch.ElapsedMilliseconds;
-        Console.WriteLine("|{0,6}|{1,10}|{2,15}|{3,15}{4,4}|", question.Name, part, resultTwo, timeTwo, "(ms)");
+        var timeTwo = stopwatch.Elapsed.TotalNanoseconds;
+        Console.WriteLine("|{0,6}|{1,10}|{2,15}|{3,15}{4,4}|", question.Name, part, resultTwo, timeTwo, "(ns)");
     }
     catch (NotImplementedException e)
     {

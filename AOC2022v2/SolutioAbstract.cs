@@ -10,7 +10,8 @@ public abstract class SolutioAbstract
 
     protected string[] ReadInput()
     {
-        return System.IO.File.ReadAllLines($"C:/Users/Frede/RiderProjects/AOC2022v2/AOC2022v2/Inputs/{Path}");
+        var projectPath = Directory.GetParent(Environment.CurrentDirectory)!.Parent!.Parent;
+        return File.ReadAllLines($"{projectPath}/Inputs/{Path}");
     }
     
 }

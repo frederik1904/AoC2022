@@ -1,10 +1,13 @@
-﻿namespace AOC2022v2;
+﻿using BenchmarkDotNet.Attributes;
+
+namespace AOC2022v2;
 
 public class Day1 : SolutioAbstract
 {
     protected override string Path { get; set; } = "Day1Input1.txt";
     public override string Name { get; set; } = "Day 1";
 
+    [Benchmark]
     public override string SolveOne()
     {
         return ComputedInput().Max().ToString();
@@ -31,6 +34,7 @@ public class Day1 : SolutioAbstract
         return res;
     }
 
+    [Benchmark]
     public override string SolveTwo()
     {
         var calculatedArray = ComputedInput();
